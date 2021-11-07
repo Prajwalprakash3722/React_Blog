@@ -5,7 +5,7 @@ function App() {
         🦄
       </span>
       <h1 className="text-4xl ml-2 font-semibold text-blue-100">
-        React + Tailwind CSS React_Blog
+        React + Tailwind CSS React Blog
       </h1>
     </div>
   );
