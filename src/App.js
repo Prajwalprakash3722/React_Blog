@@ -1,13 +1,26 @@
+import React from "react";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/Login";
+import SignUpPage from "./pages/SignUp";
+
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import NavBar from "./components/Navbar/NavBar";
+import Post from "./components/Post/Post";
+import WriteArticle from "./pages/WriteArticle";
 function App() {
   return (
-    <div className="flex flex-row items-center justify-center min-h-screen bg-gray-400">
-      <span role="img" aria-label="emoji">
-        🦄
-      </span>
-      <h1 className="text-4xl ml-2 font-semibold text-blue-100">
-        React + Tailwind CSS React Blog
-      </h1>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <div className="md:ml-20 p-4">
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/login" element={<LoginPage />} />
+          <Route exact path="/signup" element={<SignUpPage />} />
+          <Route exact path="/write" element={<WriteArticle />} />
+          <Route exact path="/post/:id" element={<Post />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
